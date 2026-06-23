@@ -3,6 +3,7 @@ build/
 Build/
 Builds/
 artifacts/
+docs/sources/
 local.properties
 *.apk
 *.ap_

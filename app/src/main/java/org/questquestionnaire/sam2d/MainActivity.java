@@ -182,7 +182,7 @@ public final class MainActivity extends Activity {
         LinearLayout root = rootLayout();
         TextView title = title("Rate the previous session");
         root.addView(title);
-        TextView instruction = body("Select one figure on each row to show how you felt during the previous session.");
+        TextView instruction = body("Select one image on each row to show how you felt during the previous session.");
         root.addView(instruction);
 
         valenceView = new SamScaleView(this);

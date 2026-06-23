@@ -51,7 +51,7 @@ public final class RenderSamVisualsTest {
         }
 
         JSONArray renders = new JSONArray();
-        for (Dimension dimension : parseDimensions(System.getProperty("sam.render.sizes", "1280x800,900x800"))) {
+        for (Dimension dimension : parseDimensions(System.getProperty("sam.render.sizes", "1600x760,1280x720,960x720"))) {
             renders.put(renderSamScreen(context, output, dimension, "sam-empty", 0, 0));
             renders.put(renderSamScreen(context, output, dimension, "sam-selected", 5, 4));
             renders.put(renderSliderScreen(output, dimension, "affective-slider", 100, 75));
@@ -75,7 +75,12 @@ public final class RenderSamVisualsTest {
         Paint paint = paint();
         float margin = 26f;
         drawCenteredText(canvas, paint, "Rate the previous session", dimension.width / 2f, 58f, 28f, TEXT, true);
-        drawCenteredText(canvas, paint, "Select one figure on each row to show how you felt during the previous session.", dimension.width / 2f, 94f, 17f, MUTED, false);
+        drawCenteredText(canvas, paint, "Select one image on each row to show how you felt during the previous session.", dimension.width / 2f, 94f, 17f, MUTED, false);
+
+        float footerTop = dimension.height - 86f;
+        float scaleTop = 110f;
+        float rowGap = 18f;
+        float scaleHeight = Math.max(226f, Math.min(276f, (footerTop - scaleTop - rowGap) / 2f));
 
         SamScaleView valence = new SamScaleView(context);
         valence.configure("valence", "Valence", "Very unpleasant", "Very pleasant", "valence");
@@ -83,17 +88,17 @@ public final class RenderSamVisualsTest {
         if (valenceScore > 0) {
             valence.setSelectedScore(valenceScore);
         }
-        drawChild(canvas, valence, margin, 110f, dimension.width - 2f * margin, 288f);
+        drawChild(canvas, valence, margin, scaleTop, dimension.width - 2f * margin, scaleHeight);
 
         SamScaleView arousal = new SamScaleView(context);
         arousal.configure("arousal", "Arousal", "Very calm", "Very excited", "arousal");
         if (arousalScore > 0) {
             arousal.setSelectedScore(arousalScore);
         }
-        drawChild(canvas, arousal, margin, 408f, dimension.width - 2f * margin, 288f);
+        drawChild(canvas, arousal, margin, scaleTop + scaleHeight + rowGap, dimension.width - 2f * margin, scaleHeight);
 
-        drawButton(canvas, paint, "Reset", margin, dimension.height - 86f, (dimension.width - 3f * margin) / 2f, 62f, false);
-        drawButton(canvas, paint, "Next", (dimension.width + margin) / 2f, dimension.height - 86f, (dimension.width - 3f * margin) / 2f, 62f, true);
+        drawButton(canvas, paint, "Reset", margin, footerTop, (dimension.width - 3f * margin) / 2f, 62f, false);
+        drawButton(canvas, paint, "Next", (dimension.width + margin) / 2f, footerTop, (dimension.width - 3f * margin) / 2f, 62f, true);
         return writeRender(output, dimension, stage, "sam", image);
     }
 

@@ -31,6 +31,7 @@ public final class SamScaleView extends View {
     private final Paint slotPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint selectedPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint focusPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final Paint tilePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint bitmapPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG | Paint.DITHER_FLAG);
     private final RectF scaleRect = new RectF();
     private final RectF drawRect = new RectF();
@@ -126,9 +127,9 @@ public final class SamScaleView extends View {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        int desiredHeight = dp(280);
+        int desiredHeight = dp(264);
         int height = resolveSize(desiredHeight, heightMeasureSpec);
-        int width = resolveSize(dp(720), widthMeasureSpec);
+        int width = resolveSize(dp(CHOICE_COUNT * 142), widthMeasureSpec);
         setMeasuredDimension(width, height);
     }
 
@@ -138,8 +139,8 @@ public final class SamScaleView extends View {
         float width = getWidth();
         float height = getHeight();
         float padding = dp(6);
-        float top = dp(34);
-        float bottom = height - dp(44);
+        float top = dp(36);
+        float bottom = height - dp(42);
         scaleRect.set(padding, top, width - padding, bottom);
 
         textPaint.setColor(Color.rgb(17, 24, 39));
@@ -160,21 +161,13 @@ public final class SamScaleView extends View {
             float centerX = scaleRect.left + (score - 0.5f) * slotWidth;
             SVG svg = svgs[score - 1];
             figureBounds(score, slotRect, drawRect);
-            highlightRect.set(
-                drawRect.left - dp(8),
-                drawRect.top - dp(8),
-                drawRect.right + dp(8),
-                drawRect.bottom + dp(8));
+            highlightRect.set(slotRect);
             if (score == selectedScore) {
-                slotPaint.setColor(Color.rgb(254, 243, 199));
-                slotPaint.setStyle(Paint.Style.FILL);
-                canvas.drawRoundRect(highlightRect, dp(8), dp(8), slotPaint);
-                slotPaint.setStyle(Paint.Style.STROKE);
-                slotPaint.setStrokeWidth(dp(3));
-                slotPaint.setColor(Color.rgb(202, 138, 4));
-                canvas.drawRoundRect(highlightRect, dp(8), dp(8), slotPaint);
+                drawTile(canvas, highlightRect, Color.rgb(254, 243, 199), Color.rgb(202, 138, 4), dp(3));
             } else if (score == focusedScore) {
-                canvas.drawRoundRect(highlightRect, dp(8), dp(8), focusPaint);
+                drawTile(canvas, highlightRect, Color.WHITE, focusPaint.getColor(), focusPaint.getStrokeWidth());
+            } else {
+                drawTile(canvas, highlightRect, Color.WHITE, Color.rgb(226, 232, 240), dp(1));
             }
 
             if (svg != null) {
@@ -254,14 +247,24 @@ public final class SamScaleView extends View {
     }
 
     private void figureBounds(int score, RectF slot, RectF out) {
-        float maxHeight = Math.max(dp(80), scaleRect.height() - dp(34));
-        float maxWidth = Math.max(dp(80), slot.width() - dp(16));
+        float maxHeight = Math.max(dp(80), scaleRect.height() - dp(42));
+        float maxWidth = Math.max(dp(80), slot.width() - dp(24));
         float aspect = svgAspects[score - 1] > 0f ? svgAspects[score - 1] : 100f / 107f;
         float drawWidth = Math.min(maxWidth, maxHeight * aspect);
         float drawHeight = Math.min(maxHeight, maxWidth / aspect);
         float left = slot.centerX() - drawWidth / 2f;
-        float top = scaleRect.top + dp(2);
+        float top = slot.top + (slot.height() - drawHeight) / 2f;
         out.set(left, top, left + drawWidth, top + drawHeight);
+    }
+
+    private void drawTile(Canvas canvas, RectF rect, int fillColor, int strokeColor, float strokeWidth) {
+        tilePaint.setStyle(Paint.Style.FILL);
+        tilePaint.setColor(fillColor);
+        canvas.drawRoundRect(rect, dp(8), dp(8), tilePaint);
+        tilePaint.setStyle(Paint.Style.STROKE);
+        tilePaint.setStrokeWidth(strokeWidth);
+        tilePaint.setColor(strokeColor);
+        canvas.drawRoundRect(rect, dp(8), dp(8), tilePaint);
     }
 
     private final Bitmap[] manikinBitmaps = new Bitmap[CHOICE_COUNT];

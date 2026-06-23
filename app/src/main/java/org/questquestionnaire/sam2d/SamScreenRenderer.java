@@ -21,8 +21,8 @@ import java.security.MessageDigest;
 import java.util.Locale;
 
 final class SamScreenRenderer {
-    private static final int WIDTH = 1280;
-    private static final int HEIGHT = 800;
+    private static final int WIDTH = 1600;
+    private static final int HEIGHT = 760;
     private static final int BG = Color.rgb(248, 250, 252);
     private static final int TEXT = Color.rgb(17, 24, 39);
     private static final int MUTED = Color.rgb(71, 85, 105);
@@ -34,7 +34,7 @@ final class SamScreenRenderer {
     static RenderResult renderSamSelected(Context context, String runId, int valence, int arousal) throws Exception {
         LinearLayout root = root(context);
         root.addView(title(context, "Rate the previous session"));
-        root.addView(body(context, "Select one figure on each row to show how you felt during the previous session."));
+        root.addView(body(context, "Select one image on each row to show how you felt during the previous session."));
 
         SamScaleView valenceView = new SamScaleView(context);
         valenceView.configure("valence", "Valence", "Very unpleasant", "Very pleasant", "valence");

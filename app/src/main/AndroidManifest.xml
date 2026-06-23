@@ -49,10 +49,10 @@
                     android:scheme="sam2d" />
             </intent-filter>
             <layout
-                android:defaultWidth="1280dp"
-                android:defaultHeight="800dp"
-                android:minWidth="640dp"
-                android:minHeight="480dp" />
+                android:defaultWidth="1600dp"
+                android:defaultHeight="760dp"
+                android:minWidth="960dp"
+                android:minHeight="540dp" />
         </activity>
     </application>
 </manifest>

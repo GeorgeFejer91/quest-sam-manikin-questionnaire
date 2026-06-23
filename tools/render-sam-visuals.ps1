@@ -4,7 +4,7 @@ param(
     [string]$UnityAndroidRoot = "C:\Users\Georgeous\Unity\Hub\Editor\6000.2.7f2\Editor\Data\PlaybackEngines\AndroidPlayer",
     [string]$OutputRoot = "",
     [string]$RunId = "",
-    [string]$Sizes = "1280x800,900x800"
+    [string]$Sizes = "1600x760,1280x720,960x720"
 )
 
 $ErrorActionPreference = 'Stop'
