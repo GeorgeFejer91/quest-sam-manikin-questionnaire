@@ -1,0 +1,12 @@
+Quest SAM Manikin Questionnaire
+
+This repository bundles SVG assets from:
+
+  cwi-dis/self-assessment-manikins-svg
+  https://github.com/cwi-dis/self-assessment-manikins-svg
+
+Those assets are licensed under BSD-2-Clause. The copied license text is in:
+
+  app/src/main/assets/sam/self-assessment-manikins-svg-LICENSE-BSD-2-Clause.txt
+
+The app code is licensed under the MIT License unless a file states otherwise.

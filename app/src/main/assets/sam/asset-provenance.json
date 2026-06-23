@@ -1,0 +1,127 @@
+﻿{
+    "schema":  "quest-questionnaire.sam-assets.v1",
+    "sourceRepository":  "https://github.com/cwi-dis/self-assessment-manikins-svg",
+    "sourceLicense":  "BSD-2-Clause",
+    "sourceReference":  "Bradley, M. M., \u0026 Lang, P. J. (1994). Measuring emotion: The self-assessment manikin and the semantic differential.",
+    "generatedAtUtc":  "2026-06-23T14:54:56.3810251Z",
+    "sourceFiles":  [
+                        {
+                            "dimension":  "valence",
+                            "file":  "valence-1.svg",
+                            "relativePath":  "source/valence/valence-1.svg",
+                            "sha256":  "c598b5a32f6641fe45398e5fc5ed5b4f2b47fb88eaf016517b9d464010c0ed50"
+                        },
+                        {
+                            "dimension":  "valence",
+                            "file":  "valence-2.svg",
+                            "relativePath":  "source/valence/valence-2.svg",
+                            "sha256":  "d7545c917de938754209eea6335ab858433a32718c089663c2010580cf8624a5"
+                        },
+                        {
+                            "dimension":  "valence",
+                            "file":  "valence-3.svg",
+                            "relativePath":  "source/valence/valence-3.svg",
+                            "sha256":  "3f8f5cb75904aa30c6ee3848a6e0f01b9e7257df0241e556b4b335bab731c93c"
+                        },
+                        {
+                            "dimension":  "valence",
+                            "file":  "valence-4.svg",
+                            "relativePath":  "source/valence/valence-4.svg",
+                            "sha256":  "0cb77251f42feb292bf182696668c1700f335f48866f02751d1849914bd13322"
+                        },
+                        {
+                            "dimension":  "valence",
+                            "file":  "valence-5.svg",
+                            "relativePath":  "source/valence/valence-5.svg",
+                            "sha256":  "ccfe5fc68615ec74cc30fb437dbe3d2fed3d0b6256cecf4a95a77ed16286919a"
+                        },
+                        {
+                            "dimension":  "valence",
+                            "file":  "valence-6.svg",
+                            "relativePath":  "source/valence/valence-6.svg",
+                            "sha256":  "6e0cc7d9a46bd5073ced6903226a84735be3ea2eaf4cc89721f5158cddc6e7bb"
+                        },
+                        {
+                            "dimension":  "valence",
+                            "file":  "valence-7.svg",
+                            "relativePath":  "source/valence/valence-7.svg",
+                            "sha256":  "4af58d2e70f235bb789ab4c1a95857e56b6f3850878db9b2846bc0503af35dbf"
+                        },
+                        {
+                            "dimension":  "valence",
+                            "file":  "valence-8.svg",
+                            "relativePath":  "source/valence/valence-8.svg",
+                            "sha256":  "c8657f2f874c8acf2a62f02d8acf2cafac324e645e997b2ddb6a50faa0e2ede3"
+                        },
+                        {
+                            "dimension":  "valence",
+                            "file":  "valence-9.svg",
+                            "relativePath":  "source/valence/valence-9.svg",
+                            "sha256":  "8bc52ded20bfb443518a4315616ef7a4a4a0382d05d4c40a97085e66fd234f2b"
+                        },
+                        {
+                            "dimension":  "arousal",
+                            "file":  "arousal-1.svg",
+                            "relativePath":  "source/arousal/arousal-1.svg",
+                            "sha256":  "fff114ba4d40bfc06ec0256fd3659f90dc636641051404c941d87f7ca46fba98"
+                        },
+                        {
+                            "dimension":  "arousal",
+                            "file":  "arousal-2.svg",
+                            "relativePath":  "source/arousal/arousal-2.svg",
+                            "sha256":  "4db3b78e435e592a1cb0414b359dc60d04385fa27c65593423f965e4feaebc57"
+                        },
+                        {
+                            "dimension":  "arousal",
+                            "file":  "arousal-3.svg",
+                            "relativePath":  "source/arousal/arousal-3.svg",
+                            "sha256":  "89624d91481a4803633bdc6a0d0b109c2c9274d9ec1b5ddf0a331667510a0d3a"
+                        },
+                        {
+                            "dimension":  "arousal",
+                            "file":  "arousal-4.svg",
+                            "relativePath":  "source/arousal/arousal-4.svg",
+                            "sha256":  "a85d38f73938fbc087b8f373bdbb549fd425776b31fd48d6d94934e047eff67c"
+                        },
+                        {
+                            "dimension":  "arousal",
+                            "file":  "arousal-5.svg",
+                            "relativePath":  "source/arousal/arousal-5.svg",
+                            "sha256":  "4b3a68ce7fea0990cf332d0fef2989c32d890899af978f1bf3401e302e55c25d"
+                        },
+                        {
+                            "dimension":  "arousal",
+                            "file":  "arousal-6.svg",
+                            "relativePath":  "source/arousal/arousal-6.svg",
+                            "sha256":  "232cc5cc6de4cb70d27b3d1bbca8df51d61a2d3e2bf34b372461bce3b85b1791"
+                        },
+                        {
+                            "dimension":  "arousal",
+                            "file":  "arousal-7.svg",
+                            "relativePath":  "source/arousal/arousal-7.svg",
+                            "sha256":  "b13af67a53de880ddd3965f4f224ead13f1de47458c2a1c6fe20dffb37aaca9b"
+                        },
+                        {
+                            "dimension":  "arousal",
+                            "file":  "arousal-8.svg",
+                            "relativePath":  "source/arousal/arousal-8.svg",
+                            "sha256":  "1b7a46fbd370b70dcb7dd77891ec4a69ef1217611d87d5b50c4b22da1d885208"
+                        },
+                        {
+                            "dimension":  "arousal",
+                            "file":  "arousal-9.svg",
+                            "relativePath":  "source/arousal/arousal-9.svg",
+                            "sha256":  "da71eddfa9e64a7eb992a47ccf51131ddbd1a08cadcaa2c6b6530e89d03973f2"
+                        }
+                    ],
+    "composedGrids":  {
+                          "valence":  {
+                                          "relativePath":  "grid/sam_valence_grid.svg",
+                                          "sha256":  "ae087990025ce5561a4ac10c41175d79eb6303f1210a6e9d05b74b9a7aaa36d9"
+                                      },
+                          "arousal":  {
+                                          "relativePath":  "grid/sam_arousal_grid.svg",
+                                          "sha256":  "7f517ed97723a76846cbe317ae4c3d32b0df3a4c1e7f40d03cc23ea64f08c631"
+                                      }
+                      }
+}
